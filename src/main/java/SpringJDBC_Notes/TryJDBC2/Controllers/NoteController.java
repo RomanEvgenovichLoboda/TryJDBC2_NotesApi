@@ -2,14 +2,12 @@ package SpringJDBC_Notes.TryJDBC2.Controllers;
 
 import SpringJDBC_Notes.TryJDBC2.Models.Note;
 import SpringJDBC_Notes.TryJDBC2.Repositories.NoteRepository;
-import org.apache.velocity.exception.ResourceNotFoundException;
+import SpringJDBC_Notes.TryJDBC2.Exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
-import java.util.Optional;
 
 @Controller
 @RequestMapping(path = "/note")
