@@ -1,9 +1,6 @@
-package SpringJDBC_Notes.TryJDBC2.Models;
+package com.example.jdbcH2.Models;
 
-import java.lang.System.Logger;
-import java.lang.System.Logger.Level;
 import java.sql.DriverManager;
-import java.lang.Exception;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -21,13 +18,11 @@ public class DbManager {
         this.user = user;
         this.pass = pass;
         this.dbName = dbName;
-        try {
-            // driver registration
-            Class.forName("com.mysql.cj.jdbc.Driver ");
-        } catch (ClassNotFoundException ex) {
-            System.err.println(ex.getMessage());
-//            Logger.getLogger(DbManager.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        try {
+//            Class.forName("com.mysql.cj.jdbc.Driver ");
+//        } catch (ClassNotFoundException ex) {
+//            System.err.println(ex.getMessage());
+//        }
     }
 
     public Connection connect() {
@@ -37,7 +32,6 @@ public class DbManager {
             return this.conn;
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
-//            Logger.getLogger(DbManager.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
     }
@@ -50,7 +44,6 @@ public class DbManager {
             set = comm.executeQuery(sql);
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
-//            Logger.getLogger(DbManager.class.getName()).log(Level.SEVERE, null, ex);
         }
         return set;
     }

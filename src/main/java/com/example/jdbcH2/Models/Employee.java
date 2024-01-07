@@ -1,4 +1,4 @@
-package SpringJDBC_Notes.TryJDBC2.Models;
+package com.example.jdbcH2.Models;
 
 //import jakarta.persistence.*;
 //

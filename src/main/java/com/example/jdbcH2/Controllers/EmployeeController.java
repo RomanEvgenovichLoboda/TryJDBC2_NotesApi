@@ -1,7 +1,7 @@
-package SpringJDBC_Notes.TryJDBC2.Controllers;
+package com.example.jdbcH2.Controllers;
 
-import SpringJDBC_Notes.TryJDBC2.Models.Employee;
-import SpringJDBC_Notes.TryJDBC2.Service.DbService;
+import com.example.jdbcH2.Models.Employee;
+import com.example.jdbcH2.Service.DbService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

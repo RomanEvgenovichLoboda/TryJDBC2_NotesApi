@@ -1,7 +1,7 @@
-package SpringJDBC_Notes.TryJDBC2.Service;
+package com.example.jdbcH2.Service;
 
-import SpringJDBC_Notes.TryJDBC2.Models.DbManager;
-import SpringJDBC_Notes.TryJDBC2.Models.Employee;
+import com.example.jdbcH2.Models.DbManager;
+import com.example.jdbcH2.Models.Employee;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
