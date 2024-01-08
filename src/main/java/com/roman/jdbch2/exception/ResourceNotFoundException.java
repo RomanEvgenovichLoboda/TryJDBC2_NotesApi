@@ -1,4 +1,4 @@
-package com.example.jdbcH2.Exception;
+package com.roman.jdbch2.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
