@@ -1,7 +1,7 @@
 package com.roman.jdbch2.controller;
 
 import com.roman.jdbch2.model.EmployeeModel;
-import com.roman.jdbch2.service.DbService;
+import com.roman.jdbch2.service.DbEmployeeService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,11 +10,11 @@ import java.sql.SQLException;
 @RestController
 @RequestMapping(path = "/employees")
 public class EmployeeController {
-    DbService dbService;
+    DbEmployeeService dbService;
 
     {
         try {
-            dbService = new DbService();
+            dbService = new DbEmployeeService();
         } catch (SQLException e) {
             System.err.println(e.getMessage());
         }
