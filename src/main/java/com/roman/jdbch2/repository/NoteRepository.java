@@ -2,6 +2,7 @@ package com.roman.jdbch2.repository;
 
 import com.roman.jdbch2.model.NoteModel;
 import com.roman.jdbch2.service.DbNoteService;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
@@ -26,17 +27,18 @@ public class NoteRepository {
         while (set.next()) {
             list.add(new NoteModel(set.getLong("id"), set.getString("author"), set.getString("text"), set.getTimestamp("datetime")));
         }
+        dbService.connection.close();
         return list;
     }
 
     public NoteModel selectById(long id) throws SQLException {
         String sel = "SELECT * FROM notes WHERE id = " + id;
         ResultSet set = dbService.getSelectQuery(sel);
-        if (set.next()) {
-            NoteModel note = new NoteModel(set.getLong("id"), set.getString("author"), set.getString("text"), set.getTimestamp("datetime"));
-            return note;
-        }
-        return null;
+        set.next();
+        NoteModel note = new NoteModel(set.getLong("id"), set.getString("author"), set.getString("text"), set.getTimestamp("datetime"));
+        dbService.connection.close();
+        return note;
+
     }
 
     public String deleteById(long id) {

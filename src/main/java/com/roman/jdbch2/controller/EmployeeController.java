@@ -10,15 +10,7 @@ import java.sql.SQLException;
 @RestController
 @RequestMapping(path = "/employees")
 public class EmployeeController {
-    DbEmployeeService dbService;
-
-    {
-        try {
-            dbService = new DbEmployeeService();
-        } catch (SQLException e) {
-            System.err.println(e.getMessage());
-        }
-    }
+    DbEmployeeService dbService = new DbEmployeeService();
 
     @GetMapping(path = "/getAll")
     public ResponseEntity<Iterable<EmployeeModel>> getAll() {
